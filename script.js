@@ -12,3 +12,15 @@ if (roll == 1) { value = "rock";
     return value 
 };
 
+function playRound(playerSelection, computerSelection) {
+	if (computerSelection == "rock") {
+return "no winner";
+} else if (computerSelection == "scissors") { 
+return "You Win! Rock destroys scissors!"
+} else { 
+return "You lose! Paper beats rock!";
+}
+}
+
+const playerSelection = "rock";
+const computerSelection = computerPlay();
