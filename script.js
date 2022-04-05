@@ -13,14 +13,19 @@ if (roll == 1) { value = "rock";
 };
 
 function playRound(playerSelection, computerSelection) {
-	if (computerSelection == "rock") {
-return "no winner";
-} else if (computerSelection == "scissors") { 
-return "You Win! Rock destroys scissors!"
-} else { 
-return "You lose! Paper beats rock!";
+    if (playerSelection == "rock" && computerSelection == "paper") {
+        return "You lose! Paper covers rock!"
+        } else if (playerSelection == "rock" && computerSelection == "scissors") {
+        return "You win! rock destroys scissors!"
+        } else if (playerSelection == "paper" && computerSelection == "rock") {
+        return "You win! Paper covers rock!"
+        } else if (playerSelection == "paper" && computerSelection == "scissors") {
+        return "You lose! Scissors cut paper!"
+        } else if (playerSelection == "scissors" && computerSelection == "rock") {
+        return "You lose! rock destroys scissors"
+        } else if (playerSelection == "scissors" && computerSelection == "paper") {
+        return "You win! scissors cut paper"
+        } else {
+        return "No winner! Please play again"
+        }
 }
-}
-
-const playerSelection = "rock";
-const computerSelection = computerPlay();
