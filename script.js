@@ -12,20 +12,32 @@ if (roll == 1) { value = "rock";
     return value 
 };
 
+let playerScore = 0;
+let computerScore = 0;
+
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == "rock" && computerSelection == "paper") {
-        return "You lose! Paper covers rock!"
+        computerScore++; return "You lose this round! Paper covers rock!"
         } else if (playerSelection == "rock" && computerSelection == "scissors") {
-        return "You win! rock destroys scissors!"
+            playerScore++; return "You win this round! rock destroys scissors!"
         } else if (playerSelection == "paper" && computerSelection == "rock") {
-        return "You win! Paper covers rock!"
+            playerScore++; return "You win this round! Paper covers rock!"
         } else if (playerSelection == "paper" && computerSelection == "scissors") {
-        return "You lose! Scissors cut paper!"
+            computerScore++; return "You lose this round! Scissors cut paper!"
         } else if (playerSelection == "scissors" && computerSelection == "rock") {
-        return "You lose! rock destroys scissors"
+            computerScore++; return "You lose this round! rock destroys scissors"
         } else if (playerSelection == "scissors" && computerSelection == "paper") {
-        return "You win! scissors cut paper"
+            playerScore++; return "You win this round! scissors cut paper"
         } else {
-        return "No winner! Please play again"
+        return "No winner on this round! Please play again"
         }
 }
+
+function game() {
+    console.log(playRound(prompt("enter your choice here!").toLowerCase(), computerPlay()));
+    console.log(playRound(prompt("enter your choice here!").toLowerCase(), computerPlay()));
+    console.log(playRound(prompt("enter your choice here!").toLowerCase(), computerPlay()));
+    console.log(playRound(prompt("enter your choice here!").toLowerCase(), computerPlay()));
+    console.log(playRound(prompt("enter your choice here!").toLowerCase(), computerPlay()));
+    (playerScore > computerScore) ? console.log(`Congratulations! you won by ${playerScore} points to ${computerScore}`) : console.log(`lmao! you're a loser! you lost by ${computerScore} points to ${playerScore}`);
+    };
