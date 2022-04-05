@@ -33,9 +33,15 @@ function playRound(playerSelection, computerSelection) {
         }
 }
 
-function game() {
+function playGame() {
     for (let i = 0; i < 5; i++) {
       console.log(playRound(prompt("enter your choice here!").toLowerCase(), computerPlay()));
-    }
-    (playerScore > computerScore) ? console.log(`Congratulations! you won by ${playerScore} points to ${computerScore}`) : console.log(`lmao! you're a loser! you lost by ${computerScore} points to ${playerScore}`);
     };
+    if (playerScore > computerScore) {
+        console.log(`Congratulations! you won by ${playerScore} points to ${computerScore}`);
+        } else if (playerScore < computerScore) {
+        console.log(`lmao! you're a loser! you lost by ${computerScore} points to ${playerScore}`);
+        } else {
+        console.log(`No winner this time. it's a tie! it's ${playerScore} points apiece`);
+        }
+    }
