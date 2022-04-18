@@ -1,0 +1,17 @@
+button {
+    background-color: black;
+    color: magenta;
+    margin: 50px;
+    font-size: large;
+    padding: 50px;
+}
+
+h1 {
+    text-align: center;
+}
+
+div {
+display: flex;
+margin-left: auto;
+margin-right: auto;
+}

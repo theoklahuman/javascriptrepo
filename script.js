@@ -9,13 +9,13 @@ if (roll == 1) { value = "rock";
 } else { 
     value = "scissors";
 };
-    return value 
+    return value;
 };
 
 let playerScore = 0;
 let computerScore = 0;
 
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {   
     if (playerSelection == "rock" && computerSelection == "paper") {
         computerScore++; return "You lose this round! Paper covers rock!"
         } else if (playerSelection == "rock" && computerSelection == "scissors") {
@@ -30,18 +30,19 @@ function playRound(playerSelection, computerSelection) {
             playerScore++; return "You win this round! scissors cut paper"
         } else {
         return "No winner on this round! Please play again"
-        }
+}
 }
 
-function playGame() {
-    for (let i = 0; i < 5; i++) {
-      console.log(playRound(prompt("enter your choice here!").toLowerCase(), computerPlay()));
-    };
-    if (playerScore > computerScore) {
-        console.log(`Congratulations! you won by ${playerScore} points to ${computerScore}`);
-        } else if (playerScore < computerScore) {
-        console.log(`lmao! you're a loser! you lost by ${computerScore} points to ${playerScore}`);
-        } else {
-        console.log(`No winner this time. it's a tie! it's ${playerScore} points apiece`);
-        }
-    }
+const result = document.querySelector(".result");
+const playerScores = document.querySelector(".player-score");
+const computerScores = document.querySelector(".computer-score");
+const computerChoice = document.querySelector(".computer-choice");
+
+const buttons = document.querySelectorAll("button");
+buttons.forEach(button => {
+button.addEventListener("click", function(e) {
+result.textContent = (playRound(button.id, computerPlay()));
+playerScores.textContent = `Your Score: ${playerScore}`;
+computerScores.textContent = `Computer Score: ${computerScore}`;
+});
+});
