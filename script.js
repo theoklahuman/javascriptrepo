@@ -41,8 +41,16 @@ const computerChoice = document.querySelector(".computer-choice");
 const buttons = document.querySelectorAll("button");
 buttons.forEach(button => {
 button.addEventListener("click", function(e) {
+if (playerScore == 5 || computerScore == 5) {
+    if (playerScore > computerScore) {
+        result.textContent = `Congratulations! you won by ${playerScore} points to ${computerScore}`;
+} else if (playerScore < computerScore) {
+    result.textContent = `lmao! you're a loser! you lost by ${computerScore} points to ${playerScore}`;
+}
+} else {
 result.textContent = (playRound(button.id, computerPlay()));
 playerScores.textContent = `Your Score: ${playerScore}`;
 computerScores.textContent = `Computer Score: ${computerScore}`;
+}
 });
 });

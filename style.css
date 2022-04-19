@@ -7,6 +7,15 @@ button {
 }
 
 h1 {
+    margin-top: 50px;
     text-align: center;
 }
 
+h3,h5 {
+    text-align: center;
+}
+.buttons {
+    display: flex;
+    margin-left: 290px;
+    margin-top: 50px;
+}
