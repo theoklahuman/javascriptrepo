@@ -1,4 +1,4 @@
-console.log("hello world!");
+console.log("copyright theoklahuman");
 
 function computerPlay() { 
     let roll = Math.floor((Math.random() * 3)) + 1;

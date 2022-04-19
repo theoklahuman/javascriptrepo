@@ -16,6 +16,5 @@ h3,h5 {
 }
 .buttons {
     display: flex;
-    margin-left: 290px;
-    margin-top: 50px;
+    justify-content: center;
 }
